@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load django_bootstrap5 %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remover Funcionário</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body class="container mt-5">
+    <h1 class="mb-4 text-danger">Remover Funcionário</h1>
+    
+    <div class="mb-3">
+        <h2>{{ fun.nome }}</h2>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>CPF:</strong> {{ fun.cpf }}</li>
+            <li class="list-group-item"><strong>E-mail:</strong> {{ fun.email }}</li>
+            <li class="list-group-item"><strong>Remuneração:</strong> {{ fun.remuneracao }}</li>
+        </ul>
+    </div>
+
+    <form method="post" class="mt-4">
+        {% csrf_token %}
+        <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-danger">Confirmar Remoção</button>
+            <button type="button" class="btn btn-secondary" onClick="history.go(-1)">Voltar</button>
+        </div>
+    </form>
+</body>
+</html>

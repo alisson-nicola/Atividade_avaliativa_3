@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load django_bootstrap5 %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Funcionários</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body class="container mt-5">
+    <h1 class="mb-4 text-info text-center">Listagem de Funcionários</h1>
+
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h2 class="mb-0">Funcionários Cadastrados</h2>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Nome do Funcionário</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for funcionario in object_list %}
+                    <tr>
+                        <td>{{ funcionario.nome }}</td>
+                        <td class="d-flex gap-1">
+                            <a href="{% url 'listar_funcionario' pk=funcionario.id %}" class="btn btn-primary btn-sm">Exibir Dados</a>
+                            <a href="{% url 'editar_funcionario' pk=funcionario.id %}" class="btn btn-success btn-sm">Editar</a>
+                            <a href="{% url 'remover_funcionario' pk=funcionario.id %}" class="btn btn-danger btn-sm">Remover</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a href="{% url 'form_funcionario' %}" class="btn btn-primary">Cadastrar Novo Funcionário</a>
+    </div>
+</body>
+</html>

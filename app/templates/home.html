@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+{% load static %}
+{% load django_bootstrap5 %}
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    <!-- Importação do Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Estilo para imagens redondas */
+        .img-redonda {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #007bff;
+        }
+        .img-container {
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+            flex-wrap: wrap;
+        }
+        .img-container div {
+            text-align: center;
+        }
+        .icon-links a {
+            margin: 0 10px;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+        .icon-links a:hover {
+            color: #0056b3;
+        }
+        .icon-links i {
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body class="container mt-5 text-center">
+    <!-- Cabeçalho -->
+    <h1 class="text-info mb-4">Bem-vindo ao Sistema de Funcionários</h1>
+
+    <!-- Informações dos desenvolvedores -->
+    <div class="card mb-5">
+        <div class="card-header bg-primary text-white">
+            <h2 class="mb-0">Desenvolvido por</h2>
+        </div>
+        <div class="card-body">
+            <div class="img-container">
+                <div>
+                    <img src="{% static 'images/alisson.jpg' %}" alt="Imagem de Alisson Nicola" class="img-redonda">
+                    <p class="mt-2">Alisson Nicola</p>
+                    <div class="icon-links">
+                        <a href="https://github.com/alisson-nicola" target="_blank" title="GitHub">
+                            <i class="fa-brands fa-github" style="color: #000000;"></i>
+                        </a>
+                        <a href="https://wa.me/49998117843" target="_blank" title="WhatsApp">
+                            <i class="fa-brands fa-whatsapp" style="color: #03bd00;"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <img src="{% static 'images/joao.jpeg' %}" alt="Imagem de João Eduardo Panissa" class="img-redonda">
+                    <p class="mt-2">João Eduardo Panissa</p>
+                    <div class="icon-links">
+                        <a href="https://github.com/m0biusz" target="_blank" title="GitHub">
+                            <i class="fa-brands fa-github" style="color: #000000;"></i>
+                        </a>
+                        <a href="https://wa.me/49999568225" target="_blank" title="WhatsApp">
+                            <i class="fa-brands fa-whatsapp" style="color: #03bd00;"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <img src="{% static 'images/vini.jpeg' %}" alt="Imagem de Vinicius Zorzi Martins da Silva" class="img-redonda">
+                    <p class="mt-2">Vinicius Zorzi Martins da Silva</p>
+                    <div class="icon-links">
+                        <a href="https://github.com/" target="_blank" title="GitHub">
+                            <i class="fa-brands fa-github" style="color: #000000;"></i>
+                        </a>
+                        <a href="https://wa.me/49999580638" target="_blank" title="WhatsApp">
+                            <i class="fa-brands fa-whatsapp" style="color: #03bd00;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão para iniciar a apresentação -->
+    <div>
+        <a href="{% url 'lista_funcionarios' %}" class="btn btn-primary btn-lg">Iniciar</a>
+    </div>
+
+</body>
+</html>

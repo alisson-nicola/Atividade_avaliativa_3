@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load django_bootstrap5 %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Funcionários</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body class="container mt-5">
+    <h1 class="mb-4 text-primary">Formulário de Funcionários</h1>
+    
+    <form method="post" class="bg-light p-4 rounded shadow-sm">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-success">Cadastrar </button>
+            <button type="button" class="btn btn-secondary" onClick="history.go(-1)">Voltar</button>
+        </div>
+    </form>
+</body>
+</html>
