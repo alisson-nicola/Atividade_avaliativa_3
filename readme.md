@@ -94,4 +94,4 @@ Atividade_avaliativa_3/
 
 ## Autores
 
-[Alisson Nicola](https://github.com/alisson-nicola) | [João Eduardo Panissa](https://github.com/) | [Vinícius Zorzi Martins da Silva](https://github.com/)
+[Alisson Nicola](https://github.com/alisson-nicola) | [João Eduardo Panissa](https://github.com/M0biusz) | [Vinícius Zorzi Martins da Silva](https://github.com/Zord7744)
